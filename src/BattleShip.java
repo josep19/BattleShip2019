@@ -1,7 +1,7 @@
 import java.util.Scanner; 
 
 public class BattleShip {
-	
+	//What a comment
 	public static final int SHIP_SYMBOL = 'S';
 	public static final int WATER_SYMBOL = 'O';
 	public static final int SUNK_SHIP_SYMBOL = 'X';

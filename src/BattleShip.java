@@ -1,7 +1,7 @@
 import java.util.Scanner; 
 
 public class BattleShip {
-	//What a comment.
+	
 	public static final int SHIP_SYMBOL = 'S';
 	public static final int WATER_SYMBOL = 'O';
 	public static final int SUNK_SHIP_SYMBOL = 'X';
@@ -25,7 +25,7 @@ public class BattleShip {
 	    while(!gameOver) {
 	    	printMatrix(true);
 	    	System.out.println("Enter row (Letter):");
-	    	letter = input.next().charAt(0);
+	    	letter = input.next().toUpperCase().charAt(0);
 	    	System.out.println("Enter column (Number): ");
 	    	number = input.nextInt();
 	    	shoot(letter, number);
@@ -33,13 +33,18 @@ public class BattleShip {
 	     
 	}
 	
-	private static void shoot(char letter, int number) {
-		
+	private static void shoot ( char letter, int number) {
 		int row = letter - 'A';
 		int col = number - 1;
 		
-		//if (matrix[row][col] == ...)
-		
+	if (matrix[row][col] == SHIP_SYMBOL) {
+		matrix[row][col] = SUNK_SHIP_SYMBOL;
+	}else {
+		if (matrix[row][col] == EMPTY_SYMBOL) {
+			matrix[row][col] = WATER_SYMBOL;
+			
+	}
+		}
 	}
 
 	private static void addShipsToMatrix() {
